@@ -1,3 +1,10 @@
+// 6:Write a program to print following pattern.
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+
 #include<iostream>
 
 using namespace std;

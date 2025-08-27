@@ -1,3 +1,6 @@
+// Write a  program to print all Prime numbers between 1 to n. 
+
+
 #include<iostream>
 using namespace std;
 
