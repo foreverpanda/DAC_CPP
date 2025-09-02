@@ -11,7 +11,7 @@ public:
     Account(int userId, double balance, std::string name) : userId(userId), balance(balance), name(name) {};
     void deposit(double);
     void withdraw(double);
-    virtual void displaySummary() = 0;
+    virtual void displaySummary() = 0; 
     double getBalance();
 };
 
@@ -34,7 +34,7 @@ public:
 class PremiumTrader : public Trader
 {
 
-    void buyStock();
+    void buyStock(); //5% brokerage discount
 };
 
 void Account::deposit(double amount){
