@@ -20,7 +20,58 @@ void premiumTraderLogin(){
 }
 
 void adminLogin(){
+    Admin admin;
+    int choice;
 
+
+    do {
+        std::cout << "\n--- Admin Menu ---\n";
+        std::cout << "1. Add Stock\n";
+        std::cout << "2. Update Stock\n";
+        std::cout << "3. Show All Stocks\n";
+        std::cout << "0. Logout\n";
+        std::cout << "Enter choice: ";
+        std::cin >> choice;
+
+        switch(choice) {
+            case 1: {
+                std::string symbol;
+                double price;
+                int qty, id;
+                std::cout << "Enter ID: ";
+                std::cin >> id;
+                std::cout << "Enter Symbol: ";
+                std::cin >> symbol;
+                std::cout << "Enter Price: ";
+                std::cin >> price;
+                std::cout << "Enter Quantity: ";
+                std::cin >> qty;
+                admin.add(symbol, id, price, qty);
+                break;
+            }
+            case 2: {
+                int id;
+                double newPrice;
+                std::cout << "Enter Stock ID to update: ";
+                std::cin >> id;
+                std::cout << "Enter new Price: ";
+                std::cin >> newPrice;
+
+                // Dummy way: pehle portfolio ka stock nikalna padega
+                // Abhi simple rakhta hu → portfolio ke andar se update call karenge
+                // Placeholder
+                break;
+            }
+            case 3:
+                admin.showAllStocks();
+                break;
+            case 0:
+                std::cout << "Logging out Admin...\n";
+                break;
+            default:
+                std::cout << "Invalid choice, try again.\n";
+        }
+    } while(choice != 0);
 }
 
 
@@ -33,10 +84,10 @@ int main(){
         switch (choice)
         {
         case 1:
-            traderLogin();
+            // traderLogin();
             break;
         case 2:
-            premiumTraderLogin();
+            // premiumTraderLogin();
             break;
         case 3:
             adminLogin();
