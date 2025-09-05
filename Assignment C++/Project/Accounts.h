@@ -1,5 +1,6 @@
+#pragma once
 #include "Stocks.h"
-
+#include "Portfolio.h"
 class Account
 {
 private:
@@ -11,7 +12,7 @@ public:
     Account(int userId, double balance, std::string name) : userId(userId), balance(balance), name(name) {};
     void deposit(double);
     void withdraw(double);
-    virtual void displaySummary() ; 
+    // virtual void displaySummary() ; 
     double getBalance();
 };
 
@@ -32,53 +33,18 @@ class PremiumTrader : public Trader
 
 class Admin : public Account
 {
+    std::string userName;
+    std::string pass;
     Portfolio<Stock> stockPortfolio;
 
 public:
-    Admin():Account(1,1,"Admin"){
+    Admin():Account(1,1,"1"){
+        
         std::cout<<"Admin login";
     }
     void add(std::string name,int id, double price,int quantity);
-    void updateStock(Stock&, double newPrice);
+    void updateStock(int id, double newPrice);
     void manageMarket(std::vector<Stock>&);
     void showAllStocks();
     void deleteStock(int id);
 };
-
-
-
-void Account::deposit(double amount){
-    std::cout<<"\nAmount deposited Successfully\n";
-    balance += amount;
-    std::cout<<"\nUpdated account balance : "<<balance;
-    std::cout<<std::endl;
-}
-
-void Account::withdraw(double amount){
-    if(amount > balance){
-        std::cout<<"\nInsufficient Balance\n";
-        std::cout<<"\nCurrent Balance : "<<balance<<"\n";
-    }
-    else{
-        std::cout<<"\nWithdraw Successful\n";
-        std::cout<<"\n Withdraw amount : "<<amount<<"\n";
-        balance -= amount;
-        std::cout<<"\nRemaining Balance : "<<balance<<"\n";
-    }
-}
-
-double Account::getBalance(){
-    return balance;
-}
-
-
-void Admin::add(std::string name,int id, double price,int quantity){
-
-    Stock s(id,name,price,quantity);
-    stockPortfolio.addAsset(s);
-
-}
-
-void Admin::showAllStocks(){
- 
-}
