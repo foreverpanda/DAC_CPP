@@ -1,31 +1,27 @@
-#include<iostream>
+#include <iostream>
+#include <map>
 using namespace std;
 
-void makeArray(int * arr, int size)
-{
-    for(int i = 0 ; i< size ; i++)
-    {
-        cout<<"Enter element : ";
-        cin>>arr[i];
+int main() {
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
+    
+    int arr[n];
+    cout << "Enter elements:\n";
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
-}
 
-
-void displayArray(int * arr, int size)
-{
-    cout<<"Array is : ";
-    for(int i = 0 ; i< size ; i++)
-    {
-        cout<<arr[i]<<" ";
+    map<int, int> freq;
+    for(int i = 0; i < n; i++) {
+        freq[arr[i]]++;
     }
-    cout<<endl;
-}
 
+    cout << "Frequency of each element:\n";
+    for(auto it : freq) {
+        cout << it.first << " occurs " << it.second << " times\n";
+    }
 
-
-
-int main(){
-   //do it
-
-
+    return 0;
 }

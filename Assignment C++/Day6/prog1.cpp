@@ -63,6 +63,7 @@ int main()
 
         case 3:{
               cout << "Enter two numbers :   ";
+	cin.ignore();
             cin >> d1 >> d2;
             cout<<endl;
             cout<<endl;
