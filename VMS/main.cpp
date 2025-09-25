@@ -60,7 +60,7 @@ int main(){
 
             case 4:{
                 for(auto i:allVehicles){
-                    if(typeid(i) == typeid(Car)){
+                    if(typeid(*i) == typeid(Car)){
                         i->display();
                     }
                 }
