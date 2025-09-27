@@ -57,6 +57,11 @@ Type-specific operations using RTTI
 
 Load all employees from file at start
 
+
+
+
+
+
 Why it’s fast & exam-perfect
 
 Virtual functions & overriding → displayInfo()

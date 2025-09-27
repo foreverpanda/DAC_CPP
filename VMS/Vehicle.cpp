@@ -62,8 +62,8 @@ class Car : public Vehicle
     }
     void display()
     {
-        cout << "Vehicle id : " << getVehicleId();
-    }
+        cout << "Vehicle id : " << getVehicleId()<<endl;
+    } 
     void performMaintenance(){
         cout<<"Under Servicing!!\n";
     }
@@ -104,7 +104,7 @@ class Truck : public Vehicle
     }
     void display()
     {   cout<<"Truck\n";
-        cout << "Vehicle id : " << getVehicleId();
+        cout << "Vehicle id : " << getVehicleId()<<endl;
     }
     void calculateToll(){
         cout<<"Calculating toll!!\n";

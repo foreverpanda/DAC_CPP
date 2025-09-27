@@ -24,6 +24,8 @@ int main(){
     vector<Vehicle *> allVehicles;
     bool exit = false;
 
+    // Vehicle *arr[100];
+
     while(!exit){
         cout<<"------Menu------------\n";
         cout<<"1. Car \n2. Truck\n3. Display truck\n4. Display Car\n4.CarMaintaninece\n5.TruckToll\n";
@@ -51,7 +53,7 @@ int main(){
 
             case 3:{
                 for(auto i: allVehicles){
-                    if(typeid(i) == typeid(Truck)){
+                    if(typeid(*i) == typeid(Truck)){
                         i->display();
                     }
                 }

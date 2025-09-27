@@ -177,6 +177,30 @@ void saveAndExit(vector<Employee *> const list)
     }
     myFile.close();
 }
+
+void removeEmp(vector<Employee*> &list, int id){
+
+    Employee * temp;
+
+    // int it=0;
+    // for(auto i : list){
+    //     it++;
+    //     if(i->getId() == id){
+    //         break;
+    //     }
+    // }
+    // cout<<"Present at : "<<it;
+    // list.erase(list.begin()+it-1);
+    // cout<<"Removed\n";
+
+    for(auto it = list.begin(); it!= list.end() ;it++){
+        if((*it)->getId() == id){
+            delete *it;
+            list.erase(it);
+        }
+    }
+
+}
 int main()
 {
     vector<Employee *> list;
@@ -222,6 +246,13 @@ int main()
 
                 i->displayInfo();
             }
+            break;
+        }
+        case 4:{
+            int id;
+            cout<<"Enter id to remove : ";
+            cin>>id;
+            removeEmp(list,id);
             break;
         }
         case 0:
